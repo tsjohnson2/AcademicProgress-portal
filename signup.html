@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create Account | Academic Progress</title>
+
+  <!-- Keep your main stylesheet if you want; styles below are scoped for this page -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    :root{
+      --gold:#cdb27d;
+      --text:#0b0b0b;
+      --subtle:#5a5a5a;
+      --white:#fff;
+      --input-border:#e6e6e6;
+      --card-radius:16px;
+      --shadow:0 18px 40px rgba(0,0,0,.08);
+      --pill:#0b0b0b;
+      --pill-text:#ffd875;
+    }
+
+    html,body{height:100%;margin:0;background:var(--gold);color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",sans-serif;}
+
+    /* White header bar (logo on right) */
+    .topbar{position:sticky;top:0;z-index:10;background:var(--white);
+      border-bottom:1px solid rgba(0,0,0,.06);padding:10px 18px;}
+    .topbar-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:flex-start;}
+    .pu-logo{width:clamp(150px,20vw,220px);height:auto;display:block;}
+
+    /* Layout */
+    .wrap{min-height:calc(100dvh - 64px);display:grid;place-items:start center;
+      padding:min(6vh,56px) 16px 56px;}
+    .card{width:min(760px,92vw);background:var(--white);border-radius:var(--card-radius);
+      box-shadow:var(--shadow);padding:clamp(24px,4vw,48px);}
+    .page-title{margin:0 0 12px;font-weight:800;font-size:clamp(28px,3.6vw,40px);}
+    .hint{margin:0 0 24px;color:var(--subtle);font-size:clamp(16px,2vw,18px);}
+
+    /* Form */
+    .form{display:grid;gap:18px;}
+    .row{display:grid;gap:16px;}
+    @media (min-width:680px){ .row.cols-2{grid-template-columns:1fr 1fr;} }
+
+    label{font-weight:700;font-size:16px;margin-bottom:6px;display:block;}
+    input[type="text"],input[type="email"],input[type="password"]{
+      width:100%;padding:16px 18px;border-radius:12px;border:1px solid var(--input-border);
+      font-size:18px;outline:none;transition:border-color .15s ease;background:#fff;}
+    input:focus{border-color:#bda06d;box-shadow:0 0 0 3px rgba(189,160,109,.12);}
+
+    .error{display:none;color:#b00020;font-weight:600;font-size:15px;margin-top:2px;}
+
+    .actions{margin-top:4px;display:grid;gap:12px;justify-content:start;}
+    .btn-primary{appearance:none;border:0;background:var(--pill);color:var(--pill-text);
+      padding:14px 26px;border-radius:14px;font-size:20px;font-weight:800;cursor:pointer;
+      box-shadow:0 4px 0 rgba(0,0,0,.2);transition:transform .04s ease,box-shadow .04s ease,opacity .2s ease;}
+    .btn-primary:hover{opacity:.96;}
+    .btn-primary:active{transform:translateY(1px);box-shadow:0 2px 0 rgba(0,0,0,.22);}
+
+    .alt{color:var(--subtle);font-size:16px;}
+    .alt a{color:inherit;text-decoration:underline;}
+    .alt a:hover{opacity:.85;}
+  </style>
+</head>
+
+<body>
+  <!-- White header bar with logo on the RIGHT -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <img class="pu-logo" src="pu-logo.svg" alt="Purdue University Logo">
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="wrap">
+    <section class="card" role="dialog" aria-labelledby="title">
+      <h1 id="title" class="page-title">Create your account</h1>
+      <p class="hint">Use your details to set up access to your student’s Academic Progress Portal.</p>
+
+      <form class="form" action="javascript:void(0);" autocomplete="on">
+        <!-- Names -->
+        <div class="row cols-2">
+          <div>
+            <label for="firstName">First name</label>
+            <input id="firstName" type="text" placeholder="John" autocomplete="given-name" />
+          </div>
+          <div>
+            <label for="lastName">Last name</label>
+            <input id="lastName" type="text" placeholder="Doe" autocomplete="family-name" />
+          </div>
+        </div>
+
+        <!-- Password + Email -->
+        <div class="row cols-2">
+          <div>
+            <label for="Password">Choose a password</label>
+            <input id="Password" type="password" placeholder="Create a password" autocomplete="new-password" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" autocomplete="email" />
+          </div>
+        </div>
+
+        <!-- Verify ID -->
+        <div class="row">
+          <div>
+            <label for="verifyId">Verify Student ID</label>
+            <input id="verifyId" type="text" inputmode="numeric" placeholder="0012345678" />
+            <div id="signupError" class="error"></div>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+          <button id="createAccountBtn" class="btn-primary">Create your account</button>
+          <p class="alt">Already have an account? <a href="signup2.html">Sign in.</a></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    // ---------- Constants (match the rest of your site) ----------
+    const ALLOWED_ID   = '0032664619';   // preserve leading zero
+    const KEY_LOGGED_IN = 'ap_logged_in';
+    const KEY_USER_NAME = 'ap_user_name';
+
+    // Helpers
+    const $ = id => document.getElementById(id);
+    const setError = (msg='') => { const el=$('signupError'); if(!el) return; el.textContent=msg; el.style.display = msg ? 'block' : 'none'; };
+
+    // Build display name “First Last”
+    function buildDisplayName(first, last){
+      return [String(first||'').trim(), String(last||'').trim()].filter(Boolean).join(' ');
+    }
+
+    // Create account
+    $('createAccountBtn')?.addEventListener('click', () => {
+      setError();
+
+      const first = $('firstName')?.value.trim();
+      const last  = $('lastName')?.value.trim();
+      const idVal = $('verifyId')?.value.trim();
+
+      if(!first || !last){
+        setError('Please enter both first and last name.');
+        return;
+      }
+      if(idVal !== ALLOWED_ID){
+        setError('The Student ID does not match our records.');
+        return;
+      }
+
+      const displayName = buildDisplayName(first, last);
+
+      localStorage.setItem(KEY_LOGGED_IN, '1');
+      localStorage.setItem(KEY_USER_NAME, displayName);
+
+      // Go to Grades
+      window.location.href = 'grades.html';
+    });
+  </script>
+</body>
+</html>

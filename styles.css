@@ -1,0 +1,321 @@
+:root{
+  --bg:#ffffff;            /* near-black */
+  --card:#ffffff;          /* dark card */
+  --text:#111111;          /* light text */
+  --muted:#555555;         /* muted gray */
+  --brand:#CEB888;         /* Purdue gold */
+  --brand2:#B08D57;        /* deeper gold/bronze */
+  --line:rgba(0,0,0,.12);
+  --radius:16px;
+  --shadow:0 10px 30px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  /* gold field background (fallback) */
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+a{color:var(--brand);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.card{
+  background:var(--card);
+  border:1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;
+  font-weight:700;border:1px solid transparent;cursor:pointer;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#000}
+.btn.ghost{background:rgba(255,255,255,.04);border-color:var(--line);color:var(--text)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:#000;background-image:linear-gradient(135deg,var(--brand),var(--brand2))}
+.muted{color:var(--muted)}
+header.sticky{position:sticky;top:0;z-index:50;background:var(--brand);border-bottom:1px solid rgba(0,0,0,.2);color:#000}
+.nav{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.left, .center, .right{display:flex;align-items:center;gap:12px}
+.brand-icon{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--brand),var(--brand2));box-shadow: var(--shadow);border:1px solid rgba(255,255,255,.08)}
+.brand-icon svg{width:22px;height:22px;fill:#000}
+.avatar{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#000}
+.hamburger{width:28px;height:20px;display:grid;gap:4px;cursor:pointer}
+.hamburger span{height:2px;background:#f1f1f1;border-radius:2px}
+.menu{position:absolute;top:56px;right:20px;background:var(--card);border:1px solid var(--line);border-radius:12px;min-width:180px;display:none}
+.menu.open{display:block}
+.menu a{display:block;padding:10px 14px;color:var(--text);border-bottom:1px solid var(--line)}
+.menu a:last-child{border-bottom:none}
+.tabbar{border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:10px 0;margin-bottom:14px}
+.tabbar a{padding:8px 10px;border-radius:10px;color:var(--text)}
+.tabbar a.active,.tabbar a:hover{background:rgba(206,184,136,.14);color:#000}
+select{background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px}
+.grid{display:grid;gap:16px}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.kpi{padding:16px}
+.progress{height:10px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.progress>span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--brand2));width:83%}
+.section{padding:18px}
+form{display:grid;gap:14px}
+input, textarea{background:rgba(255,255,255,.04);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit}
+.floating-cta{position:fixed;right:20px;bottom:20px}
+.centered{min-height:70vh;display:grid;place-items:center;padding:20px}
+.centered .panel{max-width:680px;padding:28px;text-align:center}
+small{font-size:12px;color:var(--muted)}
+
+/* --- Purdue auth-like header and pages --- */
+.auth-header{background:#000;color:#fff}
+.auth-header .bar{
+  max-width:1100px;
+  margin:0 auto;
+  padding:36px 20px;
+  font-weight:800;
+  letter-spacing:.5px;
+  font-size:24px;
+  color:var(--brand) !important;
+  text-align:center;
+}
+.auth-bg{background:#CEB888;min-height:100vh}
+
+/* Center the card and make it thinner */
+.auth-center{
+  min-height: calc(100vh - 64px);
+  display: grid;
+  place-items: center;
+  padding: 24px 16px; /* side padding on small screens */
+}
+.auth-card{
+  background:#fff;color:#111;border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.25);
+  padding:28px;border:1px solid rgba(0,0,0,.08);text-align:center;
+  max-width:760px; /* adjust thinner/wider here (e.g., 700–820) */
+  width:100%;
+  margin:0 auto;
+}
+.auth-card h1{margin:0 0 8px;font-size:26px;line-height:1.35}
+.auth-card p{color:#444}
+.auth-actions{display:flex;justify-content:flex-end;margin-top:18px}
+.auth-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;background:#CEB888;border:1px solid #b08d57;color:#000;font-weight:800;cursor:pointer;text-decoration:none}
+.auth-btn:hover{filter:brightness(1.05)}
+.auth-muted{color:#666;font-size:14px}
+.auth-card input{background:#fff;border:1px solid #d7d7d7;color:#111}
+.auth-card label{font-weight:600;color:#222}
+
+/* Header brand wrap with icon (inline SVG on index.html) */
+.auth-header .brand-wrap{display:flex;align-items:center;gap:10px}
+.brand-mark{height:22px;width:auto;display:block}
+
+/* Legend & disclaimer block (for Worksheets footer) */
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.legend .row{display:flex;align-items:center;gap:10px}
+.legend .dot{width:14px;height:14px;border-radius:50%}
+.dot.green{background:#2ecc71}.dot.blue{background:#3498db}
+.dot.orange{background:#f39c12}.dot.red{background:#e74c3c}
+.dot.gray{background:#95a5a6}
+.disclaimer{margin-top:10px;padding:12px;border:1px dashed rgba(255,255,255,.25);border-radius:8px}
+
+/* Background image layer for the landing page (index.html)
+   Inset the image by 1 inch on left & right: calc(100% - 2in) */
+.hero-bg{
+  /* overlay -> image -> gold base */
+  background:
+    linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.18)),
+    url('bell-tower.jpg') center / calc(100% - 2in) auto no-repeat,
+    #CEB888;
+}
+
+/* Slightly smaller heading on the landing card */
+.hero-bg .auth-card h1{
+  font-size:24px;   /* was 26px */
+  line-height:1.35;
+}
+
+@media(max-width:900px){
+  .grid.cols-3{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr}
+}
+/* --- Light header (logo only) --- */
+.auth-header--light{
+  background:#fff;                 /* white header */
+  color:#111;                      /* dark text (not used now, but safe) */
+  border-bottom: 4px solid #CEB888;/* Purdue gold underline */
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+.auth-header--light .bar{
+  padding: 14px 20px;              /* slightly slimmer bar */
+}
+.auth-header--light .brand-mark{
+  height: 24px;                    /* a bit larger on white */
+}
+
+/* Optional: tighten the card a touch on this page */
+.hero-bg .auth-card h1{
+  font-size: 24px;                 /* already reduced */
+  line-height: 1.35;
+}
+
+/* --- Light theme Purdue polish --- */
+.nav{background:#000;color:#fff}
+.nav a{color:#fff}
+.tabbar a.active,.tabbar a:hover{background:rgba(206,184,136,.18);color:#000}
+a.button, .auth-btn{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#000}
+.card{box-shadow:0 6px 18px rgba(0,0,0,.06)}
+input, textarea, select{background:#fff;color:#111;border:1px solid #d9d9d9}
+.muted{color:var(--muted)}
+body{color:var(--text)}
+
+
+/* Auth footer: black bar encapsulating info */
+.auth-footer{
+  background:#000;
+  color:#fff;
+  font-size:12px;
+  line-height:1.5;
+}
+.auth-footer .container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:16px 20px;
+}
+.auth-footer a{color:#fff;text-decoration:underline}
+
+
+
+/* Signup subhead + helper lines */
+.auth-card .subhead{
+  margin: 8px 0 16px;
+  font-size: 16px;
+  color: #444;
+}
+.auth-card .helper{
+  display:block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #666;
+}
+/* Slightly refine card width for better line length */
+.auth-card{ max-width: 720px; }
+.auth-card h1{ font-size: 24px; }
+
+
+/* Gold band below header to match Purdue look */
+.subheader-band{background:var(--brand)}
+.subheader-band .container{max-width:1100px;margin:0 auto;padding:8px 0}
+/* Remove bottom border line since the band serves as visual separation */
+.tabbar{border-bottom:none}
+
+.sticky .nav, .sticky .nav a, .sticky .who, .sticky .muted{color:#000}
+#hamburger{color:#000}
+
+.tabbar a{color:#111 !important; font-weight:700}
+.tabbar label{color:#111; font-weight:700}
+.tabbar select{background:#fff; color:#111; border:1px solid #bbb}
+
+.brand-mark{height:28px; width:auto; display:block}
+
+/* Gold top bar with Purdue logo and readable links */
+/* two-row gold topbar */
+.topbar{background:var(--brand);color:#000;}
+.topbar .topbar-row{display:flex;align-items:center;gap:18px;padding:10px 0;}
+.topbar .topbar-row.first a{color:#000;font-weight:700;}
+.topbar .topbar-row.first a.active,
+.topbar .topbar-row.first a:hover{background:rgba(0,0,0,.08);color:#000;border-radius:10px;padding:8px 10px;}
+.topbar-divider{height:1px;background:rgba(0,0,0,.18);}
+.topbar .brand-mark{height:24px;width:auto;}
+.topbar .topbar-row.second{padding-top:6px;padding-bottom:12px;}
+.topbar .topbar-row.second.center{justify-content:center;}   /* centers the dropdown */
+
+/* Right-align the second header row (Select student) */
+.topbar .topbar-row.second.right{ justify-content: flex-end; }
+
+.topbar .topbar-row.second select{background:#fff;border:1px solid #d0b780;color:#111;border-radius:10px;padding:8px 10px;}
+.profile{display:flex;align-items:center;gap:10px;font-weight:700;color:#000;}
+.profile-icon{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#6b6b6b;color:#fff;font-size:14px;}
+/* Four-up info grid (desktop) with graceful wrap on smaller screens */
+.info-grid-4{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap:16px;
+  margin-bottom: 12px;
+}
+/* Four-up info grid (desktop) with graceful wrap on smaller screens */
+.info-grid-4{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap:16px;
+  margin-bottom: 12px;
+}
+
+/* Attribute/value lines under the cards */
+.attrib-line{
+  margin-top:12px;
+  color: var(--text);
+  font-size:14px;
+  line-height:1.6;          /* more readable */
+}
+
+@media (max-width: 900px){
+  .info-grid-4{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 560px){
+  .info-grid-4{ grid-template-columns: 1fr; }
+}
+/* More breathing room inside stat cards */
+.info-grid-4 .stat.card { padding-left: 14px; }
+
+/* Even, full-width layout for the attribute line under the cards */
+.attrib-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr)); /* 3 across, 2 rows */
+  column-gap: 28px;
+  row-gap: 10px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--text);
+  align-items: baseline;
+}
+.attrib-grid > div strong{ font-weight:700; }
+
+/* Responsive: drop to 2 columns, then 1 on narrow screens */
+@media (max-width: 900px){
+  .attrib-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 560px){
+  .attrib-grid{ grid-template-columns: 1fr; }
+}
+
+/* UCC summary line */
+.ucc-summary{ display:flex; align-items:center; gap:12px; }
+.summary-title{ font-size:28px; font-weight:800; }
+
+/* Red status pill like the screenshot */
+.pill{ display:inline-block; border-radius:6px; padding:4px 10px; font-weight:700; font-size:12px; }
+.pill-danger{ background:#fce1e1; color:#b71c1c; border:1px solid #e7b8b8; }
+
+/* Meta row under the heading */
+.meta-row{ margin: 10px 0 14px; }
+
+/* Table look */
+.table-wrap{ overflow:auto; }
+.grid-table{ width:100%; border-collapse:separate; border-spacing:0; }
+.grid-table thead th{
+  text-align:left; font-weight:800; padding:12px 14px; border-bottom:1px solid rgba(0,0,0,.08);
+}
+.grid-table td{
+  padding:16px 14px; border-bottom:1px solid rgba(0,0,0,.06); vertical-align:top;
+}
+.grid-table th, .grid-table td{ white-space:nowrap; }
+.grid-table .left{ white-space:normal; }
+.ok{ color:#1a7f37; font-weight:900; margin-right:8px; }
+
+.miss{ color:#c62828; font-weight:900; margin-right:8px; }  /* red open circle */
+.req-link{ color:#0b65c2; text-decoration:underline; }      /* blue link look */
+
+/* Keep the first data row flush under the header with a continuous divider line */
+.grid-table tbody tr:first-child td{
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+
+/* If any cell uses rowspan (like the ETFA requirement), keep its content vertically centered */
+.grid-table td[rowspan]{
+  vertical-align: middle;
+}
+
+

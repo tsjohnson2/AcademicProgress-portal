@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grades | Academic Progress</title>
+  <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+  
+<header class="topbar">
+  <div class="container">
+    <!-- Row 1: logo + tabs (left), profile name + icon (right) -->
+    <div class="topbar-row first">
+      <img src="pu-logo.svg" class="brand-mark" alt="Purdue logo" />
+      <a href="worksheets.html">Worksheets</a>
+      <a class="active" href="grades.html">Grades</a>
+      <a href="links.html">Links</a>
+      <span style="flex:1"></span>
+      <div class="profile">
+        
+
+<!-- Single welcome + hover menu (right side of header) -->
+<div class="welcome-box" id="welcomeBox" tabindex="0" aria-haspopup="true" aria-expanded="false">
+  <span class="welcome-text">Welcome, <strong id="firstNameSlot">Guest</strong></span>
+
+  <!-- Hidden until hover/focus -->
+  <div class="logout-menu" role="menu" aria-label="Account menu">
+    <button id="logoutBtn" class="logout-btn" role="menuitem">Log out</button>
+  </div>
+</div>
+
+
+
+
+</div>
+    </div>
+
+    <div class="topbar-divider"></div>
+
+<!-- Second row: Parent Access (left) + Select student (right) -->
+<div class="topbar-row second">
+  <div class="parent-access">Parent Access</div>
+  <div class="flex-spacer"></div>
+
+  <div class="select-stack">
+    <label for="studentSelect" class="select-label">Select student</label>
+    <select id="studentSelect" class="student-select">
+  <option value="Taylor S. Johnson" selected>Taylor S. Johnson</option>
+</select>
+
+  </div>
+</div>
+
+
+       </label>
+      </div>
+    </div>
+  </header>
+
+</header>
+<main class="grades-page">
+
+
+  <main class="container grid">
+    <section id="grades" class="card section">
+  <h2>Grades</h2>
+
+  <!-- Four evenly spaced boxes -->
+  <div class="info-grid-4">
+    <div class="stat card">
+      <div class="muted">Student</div>
+      <div id="studentName">Taylor S. Johnson</div>
+    </div>
+
+    <div class="stat card">
+  <div class="muted">Student ID</div>
+  <div id="studentId">0032664619</div>
+</div>
+
+    <div class="stat card">
+      <div class="muted">Overall GPA</div>
+      <div><span class="badge">2.09</span></div>
+    </div>
+
+    <div class="stat card">
+      <div class="muted">Program</div>
+      <div>Mfg Engineering Technology - BS</div>
+    </div>
+  </div>
+
+ <div class="attrib-grid">
+  <div><strong>Level</strong> Undergraduate</div>
+  <div><strong>Class</strong> Senior: 90-120 Hours</div>
+  <div><strong>Major</strong> Mechatronics Engineering Technology</div>
+
+  <div><strong>Degree</strong> Bachelor of Science</div>
+  <div><strong>College</strong> Polytechnic Institute</div>
+  <div><strong>Advisor</strong> Lindsay Haughland - Primary</div>
+</div>
+
+
+
+
+
+</section><!-- University Core Curriculum (replaces the old Details block) -->
+<section class="card section container" id="ucc-section">
+<section class="card section">
+  <details open class="ucc">
+    <summary class="ucc-summary">
+      <span class="summary-title">University Core Curriculum</span>
+      <span class="pill pill-danger">INCOMPLETE</span>
+    </summary>
+
+       <div class="meta-row muted">
+      <span>Credits required: <strong>24</strong></span>
+      <span style="margin-left:24px;">Credits applied: <strong>18</strong></span>
+    </div>
+
+
+    <div class="table-wrap">
+      <table class="grid-table">
+        <thead>
+          <tr>
+            <th class="left">Requirement</th>
+            <th>Course</th>
+            <th class="left">Title</th>
+            <th>Grade</th>
+            <th>Credits</th>
+            <th>Term</th>
+            <th>Repeated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="left"><span class="ok">✔</span> UCC: Written Communication (1 Class)</td>
+            <td>SCLA 10100</td>
+            <td class="left">Crit Think &amp; Com I</td>
+            <td>C-</td>
+            <td>3</td>
+            <td>Spring 2021</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="left"><span class="ok">✔</span> UCC: Oral Communication (1 Class)</td>
+            <td>SCLA 10200</td>
+            <td class="left">Crit Think &amp; Com II</td>
+            <td>B-</td>
+            <td>3</td>
+            <td>Spring 2023</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="left"><span class="ok">✔</span> UCC: Information Literacy (1 Class)</td>
+            <td>TECH 12000</td>
+            <td class="left">Design Thinking In Technology</td>
+            <td>B</td>
+            <td>3</td>
+            <td>Fall 2020</td>
+            <td></td>
+          </tr>
+        
+<tr>
+  <td class="left"><span class="ok">✔</span> UCC: Quantitative Reasoning (1 Class)</td>
+  <td>MA 16010</td>
+  <td class="left">Applied Calculus I</td>
+  <td>C</td>
+  <td>3</td>
+  <td>Fall 2020</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> UCC: Science, Tech &amp; Society (1 Class)</td>
+  <td>EAPS 12000</td>
+  <td class="left">Intro To Geography</td>
+  <td>B+</td>
+  <td>3</td>
+  <td>Spring 2023</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> UCC: Behavioral/Social Science (1 Class)</td>
+  <td>ECON 21000</td>
+  <td class="left">Principles of Economics</td>
+  <td>B-</td>
+  <td>3</td>
+  <td>Summer 2023</td>
+  <td></td>
+</tr>
+
+<!-- Still needed (incomplete) row -->
+<tr>
+  <td class="left"><span class="miss">○</span> UCC: Science</td>
+  <td></td>
+  <td class="left">
+    <strong>Still needed:</strong> Choose from <strong>1</strong> of the following:
+    <a href="#" class="req-link">Click here for a list of courses that meet this requirement.</a>
+  </td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td class="left"><span class="miss">○</span> UCC: Humanities</td>
+  <td></td>
+  <td class="left">
+    <strong>Still needed:</strong> Choose from <strong>1</strong> of the following:
+    <a href="#" class="req-link">Click here for a list of courses that meet this requirement.</a>
+  </td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+
+
+
+       </tbody>
+      </table>
+    </div>
+  </details>
+</section>
+</section>
+
+
+
+
+<!-- Major in Mechatronics Engineering Technology (replaces the old Details block) -->
+<section class="card section container" id="major-met-section">
+<section class="card section">
+  <details open class="mhet">
+    <summary class="ucc-summary">
+      <span class="summary-title">Major in Mechatronics Engineering Technology</span>
+      <span class="pill pill-danger">INCOMPLETE</span>
+    </summary>
+
+    <div class="meta-row muted">
+      <span>Credits required: <strong>62</strong></span>
+      <span style="margin-left:24px;">Credits applied: <strong>44</strong></span>
+    </div>
+
+
+    <div class="table-wrap">
+      <table class="grid-table">
+        <thead>
+          <tr>
+            <th class="left">Requirement</th>
+            <th>Course</th>
+            <th class="left">Title</th>
+            <th>Grade</th>
+            <th>Credits</th>
+            <th>Term</th>
+            <th>Repeated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Gateway To Engineering Technology -->
+          <tr>
+            <td class="left"><span class="ok">✔</span> Gateway To Engineering Technology</td>
+            <td></td>
+            <td class="left"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+         <!-- Engineering Technology Foundations and Applications (spans two rows) -->
+<tr class="etfa-row-1">
+  <td class="left" rowspan="2" style="vertical-align:middle;">
+    <span class="ok">✔</span>
+    Engineering Technology<br/>Foundations and Applications
+  </td>
+  <td>ENGT 18000</td>
+  <td class="left">Engineering Tech<br/>Foundations</td>
+  <td>D</td>
+  <td>3</td>
+  <td>Spring 2021</td>
+  <td>(R)</td>
+</tr>
+<tr class="etfa-row-2">
+  <td>ENGT 18100</td>
+  <td class="left">Engineering Tech<br/>Applications</td>
+  <td>C</td>
+  <td>1</td>
+  <td>Spring 2021</td>
+  <td>(R)</td>
+</tr>
+
+
+
+          <!-- Introduction to C Programming -->
+          <tr>
+            <td class="left"><span class="ok">✔</span> Introduction to C Programming</td>
+            <td>CNIT 10500</td>
+            <td class="left">Intro To C Program</td>
+            <td>D+</td>
+            <td>3</td>
+            <td>Spring 2021</td>
+            <td></td>
+          </tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Introduction to Digital Systems</td>
+  <td>ECET 17900</td>
+  <td class="left">Introduction to Digital Systems</td>
+  <td>C+</td>
+  <td>3</td>
+  <td>Fall 2023</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Embedded Digital Systems</td>
+  <td>ECET 27900</td>
+  <td class="left">Embedded Digital Systems</td>
+  <td>C-</td>
+  <td>3</td>
+  <td>Summer 2025</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Instrumentation and Data Acquisition Design</td>
+  <td>ECET 32700</td>
+  <td class="left">Instrumentation &amp; Data Acquisition Design</td>
+  <td>D+</td>
+  <td>3</td>
+  <td>Fall 2024</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Continuous Systems Analysis and Design</td>
+  <td>ECET 33700</td>
+  <td class="left">Continuous Systems Analysis &amp; Design</td>
+  <td>D+</td>
+  <td>3</td>
+  <td>Spring 2025</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Production Design and Specifications</td>
+  <td>MET 10200</td>
+  <td class="left">Production Design &amp; Specifications</td>
+  <td>B+</td>
+  <td>3</td>
+  <td>Fall 2023</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="miss">○</span> Applied Statics</td>
+  <td>MET 111000</td>
+  <td class="left">Applied Statics</td>
+  <td>F</td>
+  <td>0</td>
+  <td>Spring 2023</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Mechanics Applications</td>
+  <td>MET 11300</td>
+  <td class="left">Mechanics Applications</td>
+  <td>C+</td>
+  <td>3</td>
+  <td>Fall 2023</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Materials and Processes Selective</td>
+  <td>MET 14400</td>
+  <td class="left">Materials &amp; Processes Selective</td>
+  <td>C</td>
+  <td>3</td>
+  <td>Fall 2020</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Fluid Power</td>
+  <td>MET 23000</td>
+  <td class="left">Fluid Power</td>
+  <td>C-</td>
+  <td>3</td>
+  <td>Fall 2024</td>
+  <td>(R)</td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Introduction to Industrial Controls</td>
+  <td>MET 28400</td>
+  <td class="left">Introduction to Industrial Controls</td>
+  <td>D</td>
+  <td>3</td>
+  <td>Spring 2023</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Controls and Instrumentation for Automation</td>
+  <td>MET 38200</td>
+  <td class="left">Controls &amp; Instrumentation for Automation</td>
+  <td>C-</td>
+  <td>3</td>
+  <td>Spring 2025</td>
+  <td>(R)</td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Automated Manufacturing Processes</td>
+  <td>MFET 34400</td>
+  <td class="left">Automated Manufacturing Processes</td>
+  <td>D+</td>
+  <td>3</td>
+  <td>Fall 2024</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Manufacturing Integration 1</td>
+  <td>MFET 37400</td>
+  <td class="left">Manufacturing Integration 1</td>
+  <td>C+</td>
+  <td>3</td>
+  <td>Spring 2025</td>
+  <td></td>
+</tr>
+<tr>
+
+<!-- Mechatronics Selective — STILL NEEDED -->
+<tr>
+  <td class="left"><span class="miss">○</span> Mechatronics Selective</td>
+  <td></td>
+  <td class="left">
+    <strong>Still needed:</strong> 1 Class in
+    <a href="#" class="req-link">MET 43200</a> or
+    <a href="#" class="req-link">43600</a> or
+    <a href="#" class="req-link">48200</a> or
+    <a href="#" class="req-link">58100</a> or
+    <a href="#" class="req-link">MFET 29200</a> or
+    <a href="#" class="req-link">34800</a> or
+    <a href="#" class="req-link">39200</a>
+  </td>
+  <td></td><td></td><td></td><td></td>
+</tr>
+
+<!-- Manufacturing Selective — STILL NEEDED -->
+<tr>
+  <td class="left"><span class="miss">○</span> Manufacturing Selective</td>
+  <td></td>
+  <td class="left">
+    <strong>Still needed:</strong> 1 Class in
+    <a href="#" class="req-link">AT 27200</a> or
+    <a href="#" class="req-link">30802</a> or
+    <a href="#" class="req-link">47200</a> or
+    <a href="#" class="req-link">CGT 32600</a> or
+    <a href="#" class="req-link">42300</a> or
+    <a href="#" class="req-link">42600</a> or
+    <a href="#" class="req-link">ECET 27400</a> or
+    <a href="#" class="req-link">36900</a> or
+    <a href="#" class="req-link">IET 33620</a> or
+    <a href="#" class="req-link">44275</a> or
+    <a href="#" class="req-link">MET 30200</a> or
+    <a href="#" class="req-link">33400</a> or
+    <a href="#" class="req-link">34600</a> or
+    <a href="#" class="req-link">34900</a> or
+    <a href="#" class="req-link">43200</a> or
+    <a href="#" class="req-link">43600</a> or
+    <a href="#" class="req-link">45100</a> or
+    <a href="#" class="req-link">MFET 24800</a> or
+    <a href="#" class="req-link">29200</a> or
+    <a href="#" class="req-link">34800</a> or
+    <a href="#" class="req-link">39200</a> or
+    <a href="#" class="req-link">49900</a> or
+    <a href="#" class="req-link">MGMT 45500</a>
+  </td>
+  <td></td><td></td><td></td><td></td>
+</tr>
+
+<!-- Controls Selective — STILL NEEDED -->
+<tr>
+  <td class="left"><span class="legend-icon ring ring-gold"><span class="mark">!</span></span></span> Controls Selective</td>
+  <td></td>
+  <td class="left">
+    <strong>Still needed:</strong> 1 Class in
+    <a href="#" class="req-link">ECET 27400</a> or
+    <a href="#" class="req-link">35901</a> or
+    <a href="#" class="req-link">36900</a> or
+    <a href="#" class="req-link">MET 33400</a> or
+    <a href="#" class="req-link">43200</a> or
+    <a href="#" class="req-link">43600</a> or
+    <a href="#" class="req-link">48200</a> or
+    <a href="#" class="req-link">MFET 29200</a> or
+    <a href="#" class="req-link">39200</a>
+  </td>
+  <td></td><td></td><td></td><td></td>
+</tr>
+
+
+<!-- Capstone I — STILL NEEDED -->
+<tr>
+  <td class="left"><span class="miss">○</span> Capstone I</td>
+  <td></td>
+  <td class="left">
+    <strong>Still needed:</strong> 1 Class in
+    <a href="#" class="req-link">ENGT 48000</a>
+  </td>
+  <td></td><td></td><td></td><td></td>
+</tr>
+
+<!-- Capstone II — STILL NEEDED -->
+<tr>
+  <td class="left"><span class="miss">○</span> Capstone II</td>
+  <td></td>
+  <td class="left">
+    <strong>Still needed:</strong> 1 Class in
+    <a href="#" class="req-link">ENGT 48100</a>
+  </td>
+  <td></td><td></td><td></td><td></td>
+</tr>
+
+
+        </tbody>
+      </table>
+    </div>
+  </details>
+</section>
+</section>
+
+
+<!-- Other Departmental Course Requirements – MHET -->
+
+<section class="card section container" id="mhet-section">
+<section class="card section">
+  <details open class="odcr">
+    <summary class="ucc-summary">
+      <span class="summary-title">Other Departmental Course Requirements–MHET</span>
+      <span class="pill pill-danger">INCOMPLETE</span>
+    </summary>
+
+    <div class="meta-row muted">
+      <span>Credits required: <strong>48</strong></span>
+      <span style="margin-left:24px;">Credits applied: <strong>36</strong></span>
+     
+    <div class="table-wrap">
+      <table class="grid-table">
+        <thead>
+          <tr>
+            <th class="left">Requirement</th>
+            <th>Course</th>
+            <th class="left">Title</th>
+            <th>Grade</th>
+            <th>Credits</th>
+            <th>Term</th>
+            <th>Repeated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="left"><span class="ok">✔</span> Freshman Composition Selective</td>
+            <td>SCLA 10100</td>
+            <td class="left">Crit Think &amp; Com I</td>
+            <td>C-</td>
+            <td>3</td>
+            <td>Spring 2021</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="left"><span class="ok">✔</span> Freshman Speech Selective</td>
+            <td>SCLA 10200</td>
+            <td class="left">Crit Think &amp; Com II</td>
+            <td>B-</td>
+            <td>3</td>
+            <td>Spring 2023</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="left"><span class="ok">✔</span> Design Thinking in Technology</td>
+            <td>TECH 12000</td>
+            <td class="left">Design Thinking In Technology</td>
+            <td>B</td>
+            <td>3</td>
+            <td>Fall 2020</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="left"><span class="ok">✔</span> Computer Graphics Selective</td>
+            <td>ENGT 10500</td>
+            <td class="left">Indus Tch Intro Design</td>
+            <td>DC</td>
+            <td>3</td>
+            <td>Spring 2021</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="left"><span class="ok">✔</span> Electronic Systems</td>
+            <td>ECET 22400</td>
+            <td class="left">Electronic Systems</td>
+            <td>D</td>
+            <td>3</td>
+            <td>Spring 2021</td>
+            <td></td>
+          </tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Applied Calculus 1</td>
+  <td>MA 16010</td>
+  <td class="left">Applied Calculus I</td>
+  <td>C</td>
+  <td>3</td>
+  <td>Fall 2020</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Applied Calculus 2</td>
+  <td>MA 16020</td>
+  <td class="left">Applied Calculus II</td>
+  <td>D</td>
+  <td>3</td>
+  <td>Spring 2021</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Behavior/Social Science</td>
+  <td>ECON 21000</td>
+  <td class="left">Principles of Economics</td>
+  <td>B-</td>
+  <td>3</td>
+  <td>Fall 2023</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Science Selective</td>
+  <td>BIOL 20300</td>
+  <td class="left">Human Anatomy &amp; Physiology</td>
+  <td>C+</td>
+  <td>3</td>
+  <td>Spring 2025</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Communication Selective</td>
+  <td>EDPS 31500</td>
+  <td class="left">Collaborative Leadership</td>
+  <td>B-</td>
+  <td>3</td>
+  <td>Fall 2024</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="left"><span class="ok">✔</span> Humanities/Social Science Selective</td>
+  <td>ENGL 28600</td>
+  <td class="left">The Movies</td>
+  <td>A-</td>
+  <td>3</td>
+  <td>Fall 2023</td>
+  <td></td>
+</tr>
+
+<tr>
+  <td class="left"><span class="miss">○</span> General Chemistry</td>
+  <td>CHM 111000</td>
+  <td class="left">General Chemistry</td>
+  <td>F</td>
+  <td>0</td>
+  <td>Summer 2023</td>
+  <td></td>
+</tr>
+
+<tr>
+  <td class="left"><span class="ok">✔</span> Physics Selective</td>
+  <td>PHYS 22000</td>
+  <td class="left">General Physics</td>
+  <td>C</td>
+  <td>3</td>
+  <td>Summer 2023</td>
+  <td></td>
+</tr>
+
+
+
+<!-- Global Professional Issues — STILL NEEDED -->
+<tr>
+  <td class="left"><span class="miss">○</span> Global Professional Issues</td>
+  <td></td>
+  <td class="left">
+    <strong>Still needed:</strong> 1 Class in
+    <a href="#" class="req-link">ECET 38001</a>
+  </td>
+  <td></td><td></td><td></td><td></td>
+</tr>
+
+<!-- Humanities — STILL NEEDED -->
+<tr>
+  <td class="left"><span class="miss">○</span> Humanities</td>
+  <td></td>
+  <td class="left">
+    <strong>Still needed:</strong>
+    1 Class in Humanities is required.
+    <a href="#" class="req-link">Click here for a list of courses that meet this requirement.</a>
+  </td>
+  <td></td><td></td><td></td><td></td>
+</tr>
+
+<!-- Engineering Economics — STILL NEEDED -->
+<tr>
+  <td class="left"><span class="miss">○</span> Engineering Economics</td>
+  <td></td>
+  <td class="left">
+    <strong>Still needed:</strong> 1 Class in
+    <a href="#" class="req-link">IET 33400</a>
+  </td>
+  <td></td><td></td><td></td><td></td>
+</tr>
+
+
+<!-- Technical Writing Selective — In progress -->
+<tr>
+  <td class="left"><span class="legend-icon ring ring-blue"><span class="mark">i</span></span></span> Technical Writing Selective</td>
+  <td>ENGL 42100</td>
+  <td class="left">Technical Writing</td>
+  <td></td>
+  <td>3</td>
+  <td>Fall 2025 <em class="muted">(in progress)</em></td>
+  <td></td>
+</tr>
+
+<!-- Statistics/Quality Selective — In progress -->
+<tr>
+  <td class="left"><span class="legend-icon ring ring-blue"><span class="mark">i</span></span></span> Statistics/Quality Selective</td>
+  <td>IET 31600</td>
+  <td class="left">Statistics/Quality Selective</td>
+  <td></td>
+  <td>3</td>
+  <td>Fall 2025 <em class="muted">(in progress)</em></td>
+  <td></td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+
+
+  </main>
+  <script src="script.js"></script>
+
+<!-- Legend -->
+<section class="card section legend-block container">
+  <h2 class="legend-title">Legend</h2>
+
+  <div class="legend-grid">
+    <ul class="legend-list">
+      <li>
+        <span class="legend-icon ring ring-green"><span class="mark">✔</span></span>
+        <span>Complete</span>
+      </li>
+      <li>
+        <span class="legend-icon ring ring-blue"><span class="mark">i</span></span>
+        <span>Complete except for classes in-progress</span>
+      </li>
+      
+      <li>
+        <span class="legend-text">(R)</span>
+        <span>Repeated class</span>
+      </li>
+    </ul>
+
+    <ul class="legend-list">
+      <li>
+        <span class="legend-icon ring ring-red"></span>
+        <span>Not complete</span>
+      </li>
+      <li>
+        <span class="legend-icon ring ring-gold"><span class="mark">!</span></span>
+        <span>Nearly complete – see advisor</span>
+      </li>
+      
+    </ul>
+  </div>
+</section>
+</section>
+
+
+<!-- Disclaimer -->
+<section class="card section container disclaimer-block">
+  <h3 class="disclaimer-title">Disclaimer</h3>
+  <p class="disclaimer-text">
+    <strong>**NOTE**</strong> 1) You are encouraged to use this degree audit report as a guide when
+    planning your progress toward completion of the above requirements. Your academic advisor may be
+    contacted for assistance in interpreting this report. This audit is not your academic transcript and
+    it is not official notification of completion of degree or certificate requirements. The student is
+    ultimately responsible for knowing and completing all degree requirements. The knowledge source for
+    specific degree requirements and completion is myPurduePlan. 2) If you register and receive a grade
+    for a course in which credit hours have already been granted, either by work at Purdue or by transfer
+    credit, you will forfeit the credit for the previous course. However, until final grades are processed,
+    your previous course will appear in the audit as usable credit. Also, institution credit always takes
+    precedence over transfer credit. Please bear this in mind when calculating needed credits.
+  </p>
+
+  <div class="audit-footer muted">
+    Ellucian Degree Works – © Copyright 1995-2024 Ellucian Company L.P. and its affiliates
+  </div>
+</section>
+
+    
+    </div>
+
+  </details>
+</section>
+
+
+<script>
+(function () {
+  const LIST_URL = "https://www.purdue.edu/senate/committees/standing-committees/educational/curr/courses.php";
+  const CATALOG_URL = "https://catalog.purdue.edu/index.php";
+
+  // Handle all anchors inside the Grades page that have no real href (or are "#")
+  document.querySelectorAll('.grades-page a').forEach(a => {
+    const href = a.getAttribute('href') || "";
+    if (!href || href === "#" || href.trim() === "") {
+      const text = (a.textContent || "").toLowerCase().replace(/\s+/g, " ").trim();
+      // Match the "Click here..." helper links
+      if (text.startsWith("click here for a list of courses that meet this requirement")) {
+        a.href = LIST_URL;
+      } else {
+        // All other unl inked anchors -> catalog
+        a.href = CATALOG_URL;
+      }
+      a.target = "_blank";
+      a.rel = "noopener";
+    }
+  });
+})();
+</script>
+
+</main>
+
+
+
+<script>
+  (function(){
+    const KEY_USER_NAME = 'ap_user_name';   // full name from signup.html (localStorage)
+    const KEY_FIRST     = 'ap_first_name';  // first name from signup2 email gate (sessionStorage)
+
+    // Prefer the short-lived session value; fall back to the long-lived full name.
+    function firstNameFrom(full = '') {
+      const f = String(full).trim();
+      return f ? f.split(/\s+/)[0] : '';
+    }
+
+    let first = sessionStorage.getItem(KEY_FIRST);
+    if (!first) {
+      const full = localStorage.getItem(KEY_USER_NAME) || '';
+      first = firstNameFrom(full);
+    }
+
+    // Update UI
+    const slot = document.getElementById('firstNameSlot');
+    const box  = document.getElementById('welcomeBox');
+    if (slot && box) {
+      if (first) {
+        slot.textContent = first;
+        box.style.display = 'inline-block';
+      } else {
+        // Hide if we don't know who it is
+        box.style.display = 'none';
+      }
+    }
+
+    // Logout
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', () => {
+        sessionStorage.removeItem(KEY_FIRST);
+        localStorage.removeItem(KEY_USER_NAME);
+        localStorage.removeItem('ap_logged_in');
+        window.location.href = 'signup2.html';
+      });
+    }
+
+    // Helpful ARIA state for screen readers
+    const welcome = document.getElementById('welcomeBox');
+    if (welcome) {
+      welcome.addEventListener('mouseenter', () => welcome.setAttribute('aria-expanded', 'true'));
+      welcome.addEventListener('mouseleave', () => welcome.setAttribute('aria-expanded', 'false'));
+      welcome.addEventListener('blur',       () => welcome.setAttribute('aria-expanded', 'false'), true);
+    }
+  })();
+</script>
+
+
+
+
+</body>
+</html>
+

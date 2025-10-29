@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Links | Academic Progress</title>
+  <link rel="stylesheet" href="styles2.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-row first">
+        <img src="pu-logo.svg" class="brand-mark" alt="Purdue logo" />
+        <a href="worksheets.html">Worksheets</a>
+        <a href="grades.html">Grades</a>
+        <a class="active" href="links.html">Links</a>
+        <span style="flex:1"></span>
+        <div class="profile">
+          </div>
+
+
+<!-- Single welcome + hover menu (right side of header) -->
+<div class="welcome-box" id="welcomeBox" tabindex="0" aria-haspopup="true" aria-expanded="false">
+  <span class="welcome-text">Welcome, <strong id="firstNameSlot">Guest</strong></span>
+
+  <!-- Hidden until hover/focus -->
+  <div class="logout-menu" role="menu" aria-label="Account menu">
+    <button id="logoutBtn" class="logout-btn" role="menuitem">Log out</button>
+  </div>
+</div>
+</div>
+      <div class="topbar-divider"></div>
+      <div class="topbar-row second">
+  <div class="parent-access">Parent Access</div>
+  <div class="flex-spacer"></div>
+
+  <div class="select-stack">
+    <label for="studentSelect" class="select-label">Select student</label>
+    <select id="studentSelect" class="student-select">
+  <option value="Taylor S. Johnson" selected>Taylor S. Johnson</option>
+</select>
+
+  </div>
+</div>
+
+
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main class="container grid">
+    <section id="links" class="card section">
+      <h2>Links</h2>
+      <ul>
+       
+
+<ul class="link-list">
+  <li>
+    <a class="ext"
+       href="https://catalog.purdue.edu/preview_program.php?catoid=8&poid=10145"
+       target="_blank" rel="noopener">
+      Program Requirements
+    </a>
+  </li>
+  <li>
+    <a class="ext"
+       href="https://www.purdue.edu/registrar/"
+       target="_blank" rel="noopener">
+      Registrar
+    </a>
+  </li>
+  <li>
+    <a class="ext"
+       href="https://polytechnic.purdue.edu/office-academic-advising"
+       target="_blank" rel="noopener">
+      Advising
+    </a>
+  </li>
+</ul>
+
+
+
+
+
+     </ul>
+    </section>
+  </main>
+
+
+
+ <div class="audit-footer muted">
+    Ellucian Degree Works – © Copyright 1995-2024 Ellucian Company L.P. and its affiliates
+  </div>
+
+  <script src="script.js"></script>
+
+
+
+
+<script>
+  (function(){
+    const KEY_USER_NAME = 'ap_user_name';   // full name from signup.html (localStorage)
+    const KEY_FIRST     = 'ap_first_name';  // first name from signup2 email gate (sessionStorage)
+
+    // Prefer the short-lived session value; fall back to the long-lived full name.
+    function firstNameFrom(full = '') {
+      const f = String(full).trim();
+      return f ? f.split(/\s+/)[0] : '';
+    }
+
+    let first = sessionStorage.getItem(KEY_FIRST);
+    if (!first) {
+      const full = localStorage.getItem(KEY_USER_NAME) || '';
+      first = firstNameFrom(full);
+    }
+
+    // Update UI
+    const slot = document.getElementById('firstNameSlot');
+    const box  = document.getElementById('welcomeBox');
+    if (slot && box) {
+      if (first) {
+        slot.textContent = first;
+        box.style.display = 'inline-block';
+      } else {
+        // Hide if we don't know who it is
+        box.style.display = 'none';
+      }
+    }
+
+    // Logout
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', () => {
+        sessionStorage.removeItem(KEY_FIRST);
+        localStorage.removeItem(KEY_USER_NAME);
+        localStorage.removeItem('ap_logged_in');
+        window.location.href = 'signup2.html';
+      });
+    }
+
+    // Helpful ARIA state for screen readers
+    const welcome = document.getElementById('welcomeBox');
+    if (welcome) {
+      welcome.addEventListener('mouseenter', () => welcome.setAttribute('aria-expanded', 'true'));
+      welcome.addEventListener('mouseleave', () => welcome.setAttribute('aria-expanded', 'false'));
+      welcome.addEventListener('blur',       () => welcome.setAttribute('aria-expanded', 'false'), true);
+    }
+  })();
+</script>
+
+
+
+
+</body>
+</html>
+
