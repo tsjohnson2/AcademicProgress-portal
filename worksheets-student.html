@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Worksheets | Academic Progress</title>
+  <link rel="stylesheet" href="styles2.css" />
+
+
+
+<style>
+  /* Student-only views: hide the parent header band */
+  .topbar-row.second,
+  .parent-access,
+  .select-stack {
+    display: none !important;
+  }
+</style>
+
+
+
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-row first">
+        <img src="pu-logo.svg" class="brand-mark" alt="Purdue logo" />
+<a class="active" href="worksheets-student.html">Worksheets</a>
+<a href="grades-student.html">Grades</a>
+<a href="links-student.html">Links</a>
+<span style="flex:1"></span>
+        <div class="profile">
+                  
+
+
+<!-- Single welcome + hover menu (right side of header) -->
+<div class="welcome-box" id="welcomeBox" tabindex="0" aria-haspopup="true" aria-expanded="false">
+  <span class="welcome-text">Welcome, <strong id="firstNameSlot">Guest</strong></span>
+
+  <!-- Hidden until hover/focus -->
+  <div class="logout-menu" role="menu" aria-label="Account menu">
+    <button id="logoutBtn" class="logout-btn" role="menuitem">Log out</button>
+  </div>
+</div>
+
+  <!-- Hidden until hover/focus -->
+  <div class="logout-menu" role="menu" aria-label="Account menu">
+    <button id="logoutBtn" class="logout-btn" role="menuitem">Log out</button>
+  </div>
+</div>
+      </div>
+      <div class="topbar-divider"></div>
+      <div class="topbar-row second">
+  <div class="parent-access">Parent Access</div>
+  <div class="flex-spacer"></div>
+
+
+
+
+  <div class="select-stack">
+    <label for="studentSelect" class="select-label">Select student</label>
+    <select id="studentSelect" class="student-select">
+  <option value="Taylor S. Johnson" selected>Taylor S. Johnson</option>
+</select>
+
+  </div>
+</div>
+
+        </label>
+      </div>
+    </div>
+  </header>
+
+
+</header>
+  <main class="container grid">
+    <section id="worksheets" class="card section">
+  <h2>Worksheets</h2>
+
+  <!-- Four evenly spaced boxes -->
+  <div class="info-grid-4">
+    <div class="stat card">
+      <div class="muted">Student</div>
+      <div id="studentName">Taylor S. Johnson</div>
+    </div>
+
+    <div class="stat card">
+  <div class="muted">Student ID</div>
+  <div id="studentId">0032664619</div>
+</div>
+
+    <div class="stat card">
+      <div class="muted">Overall GPA</div>
+      <div><span class="badge">2.09</span></div>
+    </div>
+
+    <div class="stat card">
+      <div class="muted">Program</div>
+      <div>Mfg Engineering Technology - BS</div>
+    </div>
+  </div>
+
+ <div class="attrib-grid">
+  <div><strong>Level</strong> Undergraduate</div>
+  <div><strong>Class</strong> Senior: 90-120 Hours</div>
+  <div><strong>Major</strong> Mechatronics Engineering Technology</div>
+
+  <div><strong>Degree</strong> Bachelor of Science</div>
+  <div><strong>College</strong> Polytechnic Institute</div>
+  <div><strong>Advisor</strong> Lindsay Haughland - Primary</div>
+</div>
+
+
+
+</main>
+  <script src="script.js"></script>
+
+
+<section class="card section container degree-block" id="degree-bsc">
+  <div class="section-top">
+    <h2 class="section-title">Degree in Bachelor of Science</h2>
+    <span class="badge badge-incomplete">INCOMPLETE</span>
+  </div>
+
+  <!-- meta row -->
+  <div class="degree-meta">
+    <div><span class="muted">Credits required:</span> <strong>120</strong></div>
+    <div><span class="muted">Credits applied:</span> <strong>92</strong></div>
+    <div><span class="muted">Catalog year:</span> <strong>Fall 2025</strong></div>
+    <div><span class="muted">GPA:</span> <strong>1.97</strong></div>
+  </div>
+
+ 
+  <!-- requirements table -->
+  <table class="req-table">
+    <tbody>
+      <!-- 32 Upper Level Credits Requirement -->
+      <tr>
+        <td class="req-mark"><span class="miss">○</span></td>
+        <td class="req-name">32 Upper Level Credits Requirement</td>
+        <td class="req-detail">
+          <strong>Still needed:</strong>
+          A minimum of 32 credits of upper level course work completed at Purdue is required.
+        </td>
+      </tr>
+
+      <!-- Overall GPA warning -->
+      <tr>
+        <td class="req-mark"><span class="legend-icon ring ring-gold"><span class="mark">!</span></span></span></td>
+        <td class="req-name">Overall GPA is above 2.0</td>
+        <td class="req-detail"></td>
+      </tr>
+
+     <!-- UCC pointer -->
+<tr>
+  <td class="req-mark"><span class="miss">○</span></td>
+  <td class="req-name">University Core Curriculum</td>
+  <td class="req-detail">
+    <strong>Still needed:</strong>
+    See <a href="grades.html#ucc-section" class="req-link">University Core Curriculum</a> section
+  </td>
+</tr>
+
+<!-- Major in Mechatronics Engineering Technology pointer -->
+<tr>
+  <td class="req-mark"><span class="miss">○</span></td>
+  <td class="req-name">Major in Mechatronics Engineering Technology</td>
+  <td class="req-detail">
+    <strong>Still needed:</strong>
+    See <a href="grades.html#major-met-section" class="req-link">Major in Mechatronics Engineering Technology</a> section
+  </td>
+</tr>
+
+<!-- MHET pointer -->
+<tr>
+  <td class="req-mark"><span class="miss">○</span></td>
+  <td class="req-name">Other Departmental Course Requirements–MHET</td>
+  <td class="req-detail">
+    <strong>Still needed:</strong>
+    See <a href="grades.html#mhet-section" class="req-link">MHET</a> section
+  </td>
+</tr>
+
+
+
+
+
+
+      <!-- Civics Literacy Proficiency Not Required -->
+      <tr>
+        <td class="req-mark"><span class="ok">✔</span></td>
+        <td class="req-name">Civics Literacy Proficiency Not Required</td>
+        <td class="req-detail"></td>
+      </tr>
+
+
+      <tr>
+        <td class="req-mark"><span class="ok">✔</span></td>
+        <td class="req-name">Professional Requirement</td>
+        <td class="req-detail"></td>
+      </tr>
+
+
+    </tbody>
+  </table>
+</section>
+
+<!-- Legend -->
+<section class="card section legend-block container">
+  <h2 class="legend-title">Legend</h2>
+
+  <div class="legend-grid">
+    <ul class="legend-list">
+      <li>
+        <span class="legend-icon ring ring-green"><span class="mark">✔</span></span>
+        <span>Complete</span>
+      </li>
+      <li>
+        <span class="legend-icon ring ring-blue"><span class="mark">i</span></span>
+        <span>Complete except for classes in-progress</span>
+      </li>
+      
+      <li>
+        <span class="legend-text">(R)</span>
+        <span>Repeated class</span>
+      </li>
+    </ul>
+
+    <ul class="legend-list">
+      <li>
+        <span class="legend-icon ring ring-red"></span>
+        <span>Not complete</span>
+      </li>
+      <li>
+        <span class="legend-icon ring ring-gold"><span class="mark">!</span></span>
+        <span>Nearly complete – see advisor</span>
+      </li>
+      
+    </ul>
+  </div>
+</section>
+
+ <div class="audit-footer muted">
+    Ellucian Degree Works – © Copyright 1995-2024 Ellucian Company L.P. and its affiliates
+  </div>
+</section>
+
+
+
+<script>
+  (function(){
+    const KEY_USER_NAME = 'ap_user_name';   // full name from signup.html (localStorage)
+    const KEY_FIRST     = 'ap_first_name';  // first name from signup2 email gate (sessionStorage)
+
+    // Prefer the short-lived session value; fall back to the long-lived full name.
+    function firstNameFrom(full = '') {
+      const f = String(full).trim();
+      return f ? f.split(/\s+/)[0] : '';
+    }
+
+    let first = sessionStorage.getItem(KEY_FIRST);
+    if (!first) {
+      const full = localStorage.getItem(KEY_USER_NAME) || '';
+      first = firstNameFrom(full);
+    }
+
+    // Update UI
+    const slot = document.getElementById('firstNameSlot');
+    const box  = document.getElementById('welcomeBox');
+    if (slot && box) {
+      if (first) {
+        slot.textContent = first;
+        box.style.display = 'inline-block';
+      } else {
+        // Hide if we don't know who it is
+        box.style.display = 'none';
+      }
+    }
+
+    // Logout
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', () => {
+        sessionStorage.removeItem(KEY_FIRST);
+        localStorage.removeItem(KEY_USER_NAME);
+        localStorage.removeItem('ap_logged_in');
+        window.location.href = 'signup2.html';
+      });
+    }
+
+    // Helpful ARIA state for screen readers
+    const welcome = document.getElementById('welcomeBox');
+    if (welcome) {
+      welcome.addEventListener('mouseenter', () => welcome.setAttribute('aria-expanded', 'true'));
+      welcome.addEventListener('mouseleave', () => welcome.setAttribute('aria-expanded', 'false'));
+      welcome.addEventListener('blur',       () => welcome.setAttribute('aria-expanded', 'false'), true);
+    }
+  })();
+</script>
+
+
+
+
+</body>
+</html>

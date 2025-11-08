@@ -100,47 +100,61 @@
     </section>
   </main>
 
-  <script>
-    (function () {
-      const KEY_FIRST = 'ap_first_name';   // read by grades/worksheets/links
-      const ALLOWED = {
-        'sherry@sixofus.us': 'Sherry',
-        'scottwj@utexas.edu': 'Scott'
-      };
+<script>
+  (function () {
+    const KEY_FIRST = 'ap_first_name';   // read by grades/worksheets/links
 
-      const $ = id => document.getElementById(id);
-      const setError = (msg='') => {
-        const el = $('loginError');
-        if (!el) return;
-        el.textContent = msg;
-        el.style.display = msg ? 'block' : 'none';
-      };
+    // Email → { first name to display, landing page }
+    const ALLOWED = {
+      'sherry@sixofus.us': {
+        first: 'Sherry',
+        target: 'grades.html'              // parent portal
+      },
+      'scottwj@utexas.edu': {
+        first: 'Scott',
+        target: 'grades.html'              // parent portal
+      },
+      'john2749@purdue.edu': {
+        first: 'Taylor',
+        target: 'grades-student.html'      // STUDENT portal
+      }
+    };
 
-      $('loginForm')?.addEventListener('submit', (e) => {
-        e.preventDefault();
-        setError('');
+    const $ = id => document.getElementById(id);
+    const setError = (msg = '') => {
+      const el = $('loginError');
+      if (!el) return;
+      el.textContent = msg;
+      el.style.display = msg ? 'block' : 'none';
+    };
 
-        const email = ($('email')?.value || '').trim().toLowerCase();
-        const pwd   = ($('password')?.value || '').trim();
+    // Make sure your form has id="loginForm" and the button type="submit"
+    $('loginForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      setError('');
 
-        if (!email || !pwd) {
-          setError('Please enter both email and password.');
-          return;
-        }
+      const email = ($('email')?.value || '').trim().toLowerCase();
+      const pwd   = ($('password')?.value || '').trim();
 
-        const first = ALLOWED[email];
-        if (!first) {
-          setError('Sorry, that email is not authorized for this portal.');
-          return;
-        }
+      if (!email || !pwd) {
+        setError('Please enter both email and password.');
+        return;
+      }
 
-        // Only for this visit
-        sessionStorage.setItem(KEY_FIRST, first);
+      const entry = ALLOWED[email];
+      if (!entry) {
+        setError('Sorry, that email is not authorized for this portal.');
+        return;
+      }
 
-        // Go to the app
-        window.location.href = 'grades.html';
-      });
-    })();
-  </script>
+      // Store first name just for this visit (used by “Welcome, …”)
+      sessionStorage.setItem(KEY_FIRST, entry.first);
+
+      // Send them to the correct version of the portal
+      window.location.href = entry.target;
+    });
+  })();
+</script>
+
 </body>
 </html>
